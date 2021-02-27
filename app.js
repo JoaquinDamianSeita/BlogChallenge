@@ -61,7 +61,10 @@ app.get("/posts/:postName", (req,res) =>{
 
     posts.forEach(post => {
       if ( lod.lowerCase(post.title)  === namePost) {
-        console.log("Macht found!");
+        res.render("post",{
+          postTitle: post.title,
+          postDesc: post.body,
+        });
       }
     });
 });
